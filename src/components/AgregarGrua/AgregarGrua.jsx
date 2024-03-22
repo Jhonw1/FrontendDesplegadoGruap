@@ -118,6 +118,7 @@ function AgregarGrua() {
       setPublicacionExitosa(true);
 
 
+      window.location.href = "/";
     } catch (error) {
       console.error("Error al publicar la grúa:", error.message);
     } finally {
