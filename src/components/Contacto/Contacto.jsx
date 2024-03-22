@@ -1,7 +1,6 @@
-// Contacto.jsx
-
 import React, { useState } from 'react';
 import './Contacto.css';
+import { SERVER_URL } from '../../constants/constants';
 
 const Contacto = () => {
   const [formData, setFormData] = useState({
@@ -19,7 +18,7 @@ const Contacto = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://backendprocesogruap-1.onrender.com/sendEmail', {
+      const response = await fetch(`https://backendprocesogruap-1.onrender.com/send-email`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -28,15 +27,18 @@ const Contacto = () => {
       });
 
       if (response.ok) {
-        console.log('Formulario enviado correctamente');
-        // Aquí puedes hacer algo después de enviar el formulario, como mostrar un mensaje de éxito o redirigir a otra página
+        alert('Mensaje enviado correctamente');
+        setFormData({
+          name: '',
+          email: '',
+          message: '',
+        });
       } else {
-        console.error('Error al enviar el formulario:', response.statusText);
-        // Aquí puedes manejar el error de envío del formulario
+        alert('Hubo un error al enviar el mensaje. Inténtalo de nuevo más tarde.');
       }
     } catch (error) {
-      console.error('Error al enviar el formulario:', error);
-      // Aquí puedes manejar el error de conexión o cualquier otro error
+      console.error('Error al enviar el mensaje:', error);
+      alert('Hubo un error al enviar el mensaje. Inténtalo de nuevo más tarde.');
     }
   };
 
