@@ -193,7 +193,9 @@ function ProfileForm() {
         </div>
 
         <div className="user-cranes">
-          <h3>Grúas Publicadas:</h3>
+        <div className="tituloGruasP"> 
+        <h3>Grúas Publicadas:</h3>
+        </div>
           <div className="gruas-list">
             {userCranes.map((grua, index) => (
               <div key={index} className="grua-card">
