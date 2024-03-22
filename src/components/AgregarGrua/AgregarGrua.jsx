@@ -66,8 +66,16 @@ function AgregarGrua() {
       setErrorMensaje("Complete todos los campos.");
       return;
     }
+    if (!gruaInfo.modelo.trim() || !gruaInfo.capacidad.trim() || !gruaInfo.ubicacion.trim()) {
+      setErrorMensaje("Complete todos los campos.");
+      return;
+    }
     if (!/^\d+$/.test(gruaInfo.modelo)) {
       setErrorMensaje("Por favor, ingrese solo números en el campo Modelo.");
+      return;
+    }
+    if (!/^\d+kg$/.test(gruaInfo.capacidad.trim())) {
+      setErrorMensaje("Por favor, ingrese un número válido seguido de 'kg' en el campo Capacidad.");
       return;
     }
 
