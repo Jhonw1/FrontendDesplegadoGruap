@@ -3,6 +3,8 @@ import axios from "axios";
 import "./AgregarGrua.css";
 import { useSelector } from "react-redux";
 import { UseUpload } from "../../firebase/hooks";
+import { useHistory } from "react-router-dom"; // Importa useHistory desde react-router-dom
+
 
 function AgregarGrua() {
 
@@ -116,7 +118,6 @@ function AgregarGrua() {
       setPublicacionExitosa(true);
 
 
-    window.location.reload();
     } catch (error) {
       console.error("Error al publicar la grúa:", error.message);
     } finally {
