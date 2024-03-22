@@ -132,7 +132,8 @@ input[type="file"] {
 
 
 .section-perfil{
-background-color: black;  height: 130vh;
+background-color: black; 
+ height: 150vh;
   display: flex;
   align-items: center;
   justify-content: center;
